@@ -1,4 +1,4 @@
-//Counting Sheep
+// Counting Sheep
 
 function sheepCounter(n) {
   if (n === 0) {
@@ -9,9 +9,9 @@ function sheepCounter(n) {
   sheepCounter(n);
 }
 
-sheepCounter(3);
+//sheepCounter(3);
 
-//Power Calculator
+// Power Calculator
 
 function powerCalculator(n, f) {
   if (f <= 0) {
@@ -28,18 +28,18 @@ function powerCalculator(n, f) {
   return result;
 }
 const result = powerCalculator(10, 2);
-console.log(result);
+//console.log(result);
 
-//Reverse String
+// Reverse String
 
 function reverseString(str) {
   if (str === '') return '';
   else return reverseString(str.substr(1)) + str.charAt(0);
 }
 
-console.log(reverseString('This is the starting string'));
+//console.log(reverseString('This is the starting string'));
 
-//nth Triangular Number
+// nth Triangular Number
 
 function tri(n) {
   if (n <= 1) {
@@ -48,9 +48,13 @@ function tri(n) {
   return n + tri(n - 1);
 }
 
-console.log(tri(9));
+//console.log(tri(9));
 
-//Fibonacci
+// String Splitter
+
+function stringSplitter(str) {}
+
+// Fibonacci
 
 function fibonacci(n) {
   if (n === 0) {
@@ -62,4 +66,69 @@ function fibonacci(n) {
   return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-console.log(fibonacci(7));
+//console.log(fibonacci(7));
+
+// Factorial Numbers
+
+function factorial(n) {
+  const nextNum = n - 1;
+  if (n === 1) {
+    return n;
+  }
+  return n * factorial(nextNum);
+}
+
+//console.log(factorial(5));
+
+// Maze Solver
+
+let mySmallMaze = [
+  [' ', ' ', ' '],
+  [' ', '*', ' '],
+  [' ', ' ', 'e'],
+];
+
+let maze = [
+  [' ', ' ', ' ', '*', ' ', ' ', ' '],
+  ['*', '*', ' ', '*', ' ', '*', ' '],
+  [' ', ' ', ' ', ' ', ' ', ' ', ' '],
+  [' ', '*', '*', '*', '*', '*', ' '],
+  [' ', ' ', ' ', ' ', ' ', ' ', 'e'],
+];
+function mazeSolver(maze) {
+  function move(column, row) {
+    if (maze[column][row] == 'e') {
+      console.log('Maze exit');
+    } else if (maze[column][row] == ' ') {
+      //console.log('Moving through (' + column + ', ' + row + ')');
+      maze[column][row] = 6;
+      if (maze[column][row] == '*') {
+        console.log('D');
+        move(column + 1, row);
+      }
+      if (column < maze.length - 1) {
+        console.log('D');
+        move(column + 1, row);
+      }
+      if (row < maze[column].length - 1) {
+        console.log('R');
+        move(column, row + 1);
+      }
+      if (column > 0) {
+        console.log('L');
+        move(column, row - 1);
+      }
+    }
+  }
+  move(0, 0);
+}
+
+//mazeSolver(maze);
+
+// Anagrams
+
+function anagrams(str) {}
+
+// Organization Chart
+
+function orgChart() {}
